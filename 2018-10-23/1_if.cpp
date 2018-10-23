@@ -10,14 +10,17 @@ int main() {
     while (true) {
         c = cin.get();
 
-        if (c == EOF) {
+        if (cin.eof()) {
             break;
         }
 
         chars++;
 
-        if (c == ' ' && had_symbol) {
-            words++;
+        if (c == ' ') {
+            if (had_symbol) {
+                words++;
+            }
+
             had_symbol = false;
         } else if (c == '\n') {
             if (had_symbol) {
@@ -26,7 +29,7 @@ int main() {
 
             lines++;
             had_symbol = false;
-        } else if (c != ' ' && c != '\n') {
+        } else {
             had_symbol = true;
         }
     }
