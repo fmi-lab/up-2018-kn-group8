@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cmath>
+#include <cstdlib>
 
 double evaluate(char operators[], double numbers[], int length);
 
